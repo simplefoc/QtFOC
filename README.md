@@ -8,7 +8,7 @@
 
 *Qt**FOC*** is a tiny, open-source, low-cost BLDC driver board in the form factor of the **Seeed Studio XIAO** / **Adafruit QT Py** boards. It is a part of the *Simple**FOC*** project and is designed to be fully compatible with the *Simple**FOC*** library.
 
-You plug in a XIAO or QT Py, connect a motor and a power supply, and you have a complete FOC motor controller in a **21mm x 36mm** footprint. The board generates its own 5V supply from the motor power input, so the microcontroller is powered from VIN as well, and no extra regulator or USB cable is needed once it is programmed.
+You plug in a XIAO or QT Py, connect a motor and a power supply, and you have a complete FOC motor controller in a **25mm x 45mm** footprint. The board generates its own 5V supply from the motor power input, so the microcontroller is powered from VIN as well, and no extra regulator or USB cable is needed once it is programmed.
 
 
 The XIAO / QT Py MCU format has a limited number of pins, but it is enough for many applications. It can run:
@@ -52,7 +52,7 @@ Like the other *Simple**FOC*** boards, it is also meant as a template project th
 - **SPI JST-SH connector (6-pin)**: for SPI position sensors (for example AS5047, MT6701, AS5048A)
 - **UART / GPIO header**: 3.3V, GND, RX, TX
 - **Fault LED** (`nFAULT`) and **power LED**
-- **Compact**: 21mm x 36mm
+- **Compact**: 25mm x 45mm
 - **Compatible MCUs**: any board with the XIAO / QT Py pinout (see the [compatibility table](#xiao--qt-py-variants))
    - Seeed Studio XIAO: SAMD21, RP2040, RP2350, nRF52840, ESP32-C3, ESP32-S3, ESP32-C6...
    - Adafruit QT Py: SAMD21, RP2040, ESP32-S2, ESP32-S3, ESP32-C3...
