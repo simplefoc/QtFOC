@@ -23,6 +23,7 @@ The XIAO / QT Py MCU format has a limited number of pins, but it is enough for m
    - With an SPI sensor connected, only `D6` is left.
    - An encoder needs both `D6` and `D7`, so it can't be used together with an SPI sensor or the UART header.
    - The I2C pins of the header (`D4` / `D5`) are used for the motor PWM. I2C sensors and devices can be connected through the [Stemma QT connector](#stemma-connector) on QT Py boards where it has its own I2C bus.
+3. The onboard 5V buck converter provides up to 200mA, which is enough for the MCU and the sensor, but not for the WiFi / BLE radio of the ESP32 boards. If you want to use WiFi or BLE, power the MCU board from USB as well.
 
 
 Like the other *Simple**FOC*** boards, it is also meant as a template project the community can modify:
@@ -47,7 +48,7 @@ Like the other *Simple**FOC*** boards, it is also meant as a template project th
 - **Current**: up to 8A peak (DRV8316 limit). The continuous current depends on cooling.
 - **Current sensing**: 2 phase low-side current sensing (phases A and B), around ±11A range with a 3.3V ADC
 - **Power supply measurement**: VIN/11 on `A2`
-- **Onboard 5V buck**: powers the XIAO / QT Py from VIN through a diode, so USB and VIN can be connected at the same time
+- **Onboard 5V buck**: powers the XIAO / QT Py from VIN through a diode, so USB and VIN can be connected at the same time (200mA max, use USB power for WiFi / BLE)
 - **SPI JST-SH connector (6-pin)**: for SPI position sensors (for example AS5047, MT6701, AS5048A)
 - **UART / GPIO header**: 3.3V, GND, RX, TX
 - **Fault LED** (`nFAULT`) and **power LED**
@@ -130,6 +131,8 @@ A minimal *Simple**FOC*** setup with the board:
 BLDCMotor motor = BLDCMotor(7); // set your motor's pole pair number
 BLDCDriver3PWM driver = BLDCDriver3PWM(D3, D4, D5);
 // DRV8316 low-side current sense: 0.15V/A = 150mV/A, phases A and B
+// requires an MCU with low-side current sensing support (see the compatibility table)
+// if your MCU doesn't support it (ex. RP2040), remove the current sense and use voltage torque control
 LowsideCurrentSense current_sense = LowsideCurrentSense(150.0f, A0, A1);
 // SPI position sensor on the JST connector
 MagneticSensorSPI sensor = MagneticSensorSPI(AS5047_SPI, D7);
