@@ -59,6 +59,7 @@ Like the other *Simple**FOC*** boards, it is also meant as a template project th
 - **Open Source**:
    - Fully designed in **EasyEDA** - [EasyEDA project](https://oshwlab.com/the.skuric/simplefocmini_copy_copy_copy_copy)
    - Fully available fabrication files - [Gerber](Gerber/), [BOM](BOM_QtFOC_2026-11-17.csv), [Pick and Place](Pick%20and%20Place/)
+- **Low-cost**: The board is basically a SimpleFOCMini with a couple of more headers, so the price is pretty much the same. It should not cost much more than 10$. 
 
 ## XIAO / QT Py variants
 
@@ -77,6 +78,7 @@ Board | MCU architecture | Supported by *Simple**FOC*** | Low-side current sensi
 [Xiao ESP32-C6](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html) | ESP32-C6 | ✅  | ✅  
 [Xiao RP2350](https://www.seeedstudio.com/Seeed-XIAO-RP2350-p-5944.html) | RP2350 | ✅  (v2.3.5+) | ❌ 
 
+See more info in the SimpleFOC [microcontrollers docs](https://docs.simplefoc.com/microcontrollers).
 
 
 ## Pinout
@@ -176,7 +178,7 @@ Most of the Adafruit QT Py boards have a Stemma QT I2C connector. It can be an a
 
 > **Note:** On most QT Py boards (RP2040, ESP32-S2, ESP32-S3...) the Stemma QT connector has its own I2C bus (`Wire1`), so it does not interfere with the motor pins. On boards where it shares the `SDA` / `SCL` header pins (`D4` / `D5`), it can't be used with this board, as those pins drive the motor. Check the pinout of your QT Py.
 
-<img src="images/all_connectors.jpg" height="200px">
+<img src="images/all_connectors.jpg" height="400px">
 
 
 ## Release log
