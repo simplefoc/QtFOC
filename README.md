@@ -58,7 +58,7 @@ Like the other *Simple**FOC*** boards, it is also meant as a template project th
    - Adafruit QT Py: SAMD21, RP2040, ESP32-S2, ESP32-S3, ESP32-C3...
 - **Open Source**:
    - Fully designed in **EasyEDA** - [EasyEDA project](https://oshwlab.com/the.skuric/simplefocmini_copy_copy_copy_copy)
-   - Fully available fabrication files - [Gerber](Gerber/), [BOM](BOM_QtFOC_2026-11-17.csv), [Pick and Place](Pick%20and%20Place/)
+   - Fully available fabrication files - [Gerber](Gerber/), [BOM](BOM_QtFOC_2026-05-09.csv), [Pick and Place](Pick%20and%20Place/)
 - **Low-cost**: The board is basically a SimpleFOCMini with a couple of more headers, so the price is pretty much the same. It should not cost much more than 10$. 
 
 ## XIAO / QT Py variants
